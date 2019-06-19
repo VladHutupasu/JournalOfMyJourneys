@@ -1,1 +1,0 @@
-journalofmyjourneys.github.io
