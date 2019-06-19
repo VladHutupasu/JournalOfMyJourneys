@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>LYNX API Documentation</title>
+	<link rel="icon" href="images/favicon_192x192.png">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta name="description" content="The LYNX Trading API is a simple yet powerful interface through which LYNX clients can automate their trading strategies, request market data and monitor your account balance and portfolio in real time.">
+	<meta name="keywords" content="trading,api,automated trading,java,python">
+	<meta name="author" content="LYNX B.V.">
+
+
+	<meta property="og:image" content="https://cdn.lynxbroker.com/wp-content/uploads/2015/06/LYNX-logo.jpg" />
+	<meta property="og:title" content="LYNX API Documentation" />
+	<meta property="og:type" content="website" />
+	<meta property="og:description" content="LYNX API - Simple and lightweight | Automate your trading | Create your own strategies" />
+
+	<!-- Set the CSS file (dark mode by default) -->
+	<link id="currentTheme" rel="stylesheet" type="text/css">
+	<!-- Common CSS file -->
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+
+	<!-- Facilitates the preloading screen -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script>
+		$(window).load(function() {
+			$(".se-pre-con").fadeOut("slow");
+		});
+	</script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140286936-1"></script>
+	<script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-140286936-1'); </script>
+
+</head>
+
+<body>
+
+	<!-- Preloader -->
+	<div class="se-pre-con"></div>
+
+	<div class="desktop">
+		<nav class="top-menu">
+			<a href="#/">Home</a>
+			<a href="#/API_versions">Download API</a>
+			<div class="dropdown">
+				<a class="dropbtn">Themes</a>
+				<div class="dropdown-content">
+					<a onclick="lightTheme()" class="themes"><img src="images/sun.png"></img></a>
+					<a onclick="darkTheme()" class="themes"><img src="images/moon.png"></img></a>
+				</div>
+			</div>
+			<a href="https://github.com/lynxbroker/API-examples" class="themes">Examples</a>	
+		</nav>
+	</div>
+
+
+	<div id="app"></div>
+
+	<!-- Return to top -->
+	<a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+
+
+	<!-- JAVASCRIPT -->
+
+	<script>
+		window.$docsify = {
+			// GENERAL
+			// ------------------------------------------------------------------------------------------------------------------
+			name: 'LYNX API Documentation',
+			repo: 'https://github.com/lynxbroker/API-examples',
+			homepage: 'Homepage.md',
+			loadSidebar: true,
+			autoHeader: true,
+			subMaxLevel: 2,
+			maxLevel: 5,
+			auto2top: true,
+			themeColor: '#00BE5C',
+			mergeNavbar: true,
+			logo: 'images/logo.svg',
+			coverpage: true,
+			executeScript: true,
+			onlyCover: false,
+			noEmoji: true,
+			notFoundPage: 'not_found.md',
+			'flexible-alerts': {
+				style: 'flat',
+				warning: {
+					label: "Important"
+				}
+			},
+
+
+			// PLUGINS
+			// ------------------------------------------------------------------------------------------------------------------
+			plugins: [
+			function(hook) {
+				var footer = [
+				'<hr/>',
+				'<footer>',
+				'<span><a href="https://www.lynx.nl">LYNX B.V.</a> &copy;2019.</span>',
+				'<span> Get in touch with our <a href="https://www.lynx.nl/service/">Customer Service</a> or by email at: <a href="mailto:dev@lynx.nl?Subject=Question API">dev@lynx.nl</a>.</span>','<div><a href="#/Cookies.md#cookie-policy">Cookies & Privacy</a></div>',
+				'</footer>'
+				].join('');
+
+				var footer2 = [''].join('');
+
+				hook.afterEach(function(html) {
+
+					return html + footer;
+
+				});
+			}
+			],
+
+			tabs: {
+    			persist    : true,      // default
+			    sync       : true,      // default
+			    theme      : 'classic', // default
+			    tabComments: true,      // default
+			    tabHeadings: true       // default
+			}
+
+		}
+	</script>
+
+	<!-- Main JS (docsify) -->
+	<script src="https://unpkg.com/docsify@4.9.4/lib/docsify.min.js"></script>
+
+	<!-- Script that checks local storage and decides the theme that needs to be applied -->
+	<script>
+		var whatTheme = window.localStorage.getItem('whatTheme');
+		var theme = document.getElementById('currentTheme');
+
+		if(whatTheme != null && whatTheme=="Light theme"){
+			theme.href = "css/vue.css";
+
+		}else if(whatTheme != null && whatTheme=="Dark theme"){
+			theme.href = "css/simple-dark.css";
+
+		}else{
+			theme.href = "css/simple-dark.css";
+		}	
+	</script>
+
+	<!-- Theme switch to light js -->
+	<script>
+		function lightTheme() {
+			window.localStorage.setItem('whatTheme', 'Light theme');
+			location.reload();
+		}
+	</script>
+
+	<!-- Theme switch to dark js -->
+	<script>
+		function darkTheme() {
+			window.localStorage.setItem('whatTheme', 'Dark theme');
+			location.reload();
+		}
+	</script>
+
+	<!-- Zoom image upon clicking -->
+	<script src="https://unpkg.com/docsify@4.9.4/lib/plugins/zoom-image.min.js"></script>
+	<!-- Copy function from code blocks -->
+	<script src="https://unpkg.com/docsify-copy-code@2.1.0/dist/docsify-copy-code.min.js"></script>
+	<!-- Search bar -->
+	<script src="https://unpkg.com/docsify@4.9.4/lib/plugins/search.min.js"></script>
+	<!-- add language highlighting for java & python -->
+	<script src="https://unpkg.com/prismjs@1.16.0/components/prism-java.min.js"></script>
+	<script src="https://unpkg.com/prismjs@1.16.0/components/prism-python.min.js"></script>
+	<!-- docsify-tabs (for different programming languages) (latest v1.x.x) -->
+	<script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+	<!-- flexible alerts -->
+	<script src="js/docsify-flexible-alerts.js"></script>
+	<!-- Allow external scripts to run -->
+	<script src="https://unpkg.com/docsify@4.9.4/lib/plugins/external-script.min.js"></script>
+
+	<!-- Return to top -->
+	<script>
+		$(window).scroll(function() {
+			    if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+			        $('#return-to-top').fadeIn(200);    // Fade in the arrow
+			    } else {
+			        $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+			    }
+			});
+		$('#return-to-top').click(function() {      // When arrow is clicked
+			$('body,html').animate({
+        		scrollTop : 0                       // Scroll to top of body
+        	}, 500);
+		});
+	</script>
+
+	<!-- Cookie info bar -->
+	<script type="text/javascript" id="cookieinfo"
+	src="//cookieinfoscript.com/js/cookieinfo.min.js" data-bg="#00BE5C" data-fg="white" data-font-size="12px" data-linkmsg="Read more" data-accept-on-scroll="true" data-link="#F1D600" data-moreinfo="https://lynxbroker.github.io/#/Cookies.md?id=cookie-policy">
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,388 @@
+/* Custom CSS */
+/* ========================================================================== */
+
+/* Load "up-arrow.png" beforehand such that the button does not appear as empty on slow internet speed */
+:root:before{
+	content: url(images/up-arrow.png);
+	visibility: hidden;
+	position: absolute;
+	left: -999em;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 15px;
+	padding-top: 15px;
+}
+
+.app-nav>a {
+	margin: 0 1rem;
+	padding: 5px 0;
+}
+
+.app-nav a {
+	color: inherit;
+	font-size: 16px;
+	text-decoration: none;
+	transition: color .5s;
+}
+
+.app-nav a.active,.app-nav a:hover {
+	color: var(--theme-color,#42b983);
+}
+
+a:hover {
+	cursor:pointer;
+}
+
+
+/*Orders the images for Third Party Vendors*/
+* {
+	box-sizing: border-box;
+}
+
+.row {
+	display: -ms-flexbox; /* IE 10 */
+	display: flex;
+	-ms-flex-wrap: wrap; /* IE 10 */
+	flex-wrap: wrap;
+	padding: 0 3px;
+}
+
+/* Creates two equal columns that sit next to each other */
+.column {
+	-ms-flex: 25%; /* IE 10 */
+	flex: 25%;
+	padding: 2 5px;
+}
+
+.column img {
+	margin-top: 50px;
+	vertical-align: middle;
+}
+
+
+/* Creates the shadow behind the boxes */
+.shadow-box{
+	box-shadow: 0 4px 8px 6px rgba(0, 0, 0, 0.2), 0 6px 20px 6px rgba(0, 0, 0, 0.19);
+	margin-top: 30px;
+}
+
+.shadow-box-container{
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+
+.markdown-section thead tr th{
+	/*background-color: #55575b;*/
+}
+
+/* Removes focus blue border from code blocks */
+.docsify-tabs__tab--active{
+	outline: none;
+}
+button:focus{
+	outline: none;
+}
+
+
+/* Creates transition effect on nav-bar */
+.top-menu a {
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	transition: color 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.top-menu a:before,
+.top-menu a:after {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 10%;
+	top: 0;
+	left: 0;
+}
+
+.top-menu a:after {
+	background: var(--theme-color);
+	transform: translateX(-101%);
+	transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.top-menu a:hover:after {
+	transform: translateX(0);
+}
+
+footer{
+	text-align: center;
+}
+
+/* Special button for the API versions page */
+
+.button::-moz-focus-inner{
+	border: 0;
+	padding: 0;
+}
+
+.button{
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	padding: 6px 20px;
+	margin: 0;
+	cursor: pointer;
+	border: 1px solid #bbb;
+	overflow: visible;
+	font: bold 13px arial, helvetica, sans-serif;
+	text-decoration: none;
+	white-space: nowrap;
+	color: #555;
+
+	background-color: #ddd;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,1)), to(rgba(255,255,255,0)));
+	background-image: -webkit-linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
+	background-image: -moz-linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
+	background-image: -ms-linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
+	background-image: -o-linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
+	background-image: linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
+
+	-webkit-transition: background-color .2s ease-out;
+	-moz-transition: background-color .2s ease-out;
+	-ms-transition: background-color .2s ease-out;
+	-o-transition: background-color .2s ease-out;
+	transition: background-color .2s ease-out;
+	background-clip: padding-box; /* Fix bleeding */
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 25px;
+	-moz-box-shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 2px 2px -1px rgba(0, 0, 0, .5), 0 1px 0 rgba(255, 255, 255, .3) inset;
+	-webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 2px 2px -1px rgba(0, 0, 0, .5), 0 1px 0 rgba(255, 255, 255, .3) inset;
+	box-shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 2px 2px -1px rgba(0, 0, 0, .5), 0 1px 0 rgba(255, 255, 255, .3) inset;
+	text-shadow: 0 1px 0 rgba(255,255,255, .9);
+
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.button:hover{
+	background-color: #eee;
+	color: #555;
+}
+
+.button:active{
+	background: #e9e9e9;
+	position: relative;
+	top: 1px;
+	text-shadow: none;
+	-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, .3) inset;
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .3) inset;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .3) inset;
+}
+
+.button[disabled], .button[disabled]:hover, .button[disabled]:active{
+	border-color: #eaeaea;
+	background: #fafafa;
+	cursor: default;
+	position: static;
+	color: #999;
+	/* Usually, !important should be avoided but here it's really needed :) */
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	text-shadow: none !important;
+}
+
+/* Smaller buttons styles */
+
+.button.small{
+	padding: 4px 12px;
+}
+
+/* Larger buttons styles */
+
+.button.large{
+	padding: 12px 30px;
+}
+
+.button.large:active{
+	top: 2px;
+}
+
+/* Colored buttons styles */
+
+.button.green{
+	color: #fff;
+	text-shadow: 0 1px 0 rgba(0,0,0,.2);
+
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,.3)), to(rgba(255,255,255,0)));
+	background-image: -webkit-linear-gradient(top, rgba(255,255,255,.3), rgba(255,255,255,0));
+	background-image: -moz-linear-gradient(top, rgba(255,255,255,.3), rgba(255,255,255,0));
+	background-image: -ms-linear-gradient(top, rgba(255,255,255,.3), rgba(255,255,255,0));
+	background-image: -o-linear-gradient(top, rgba(255,255,255,.3), rgba(255,255,255,0));
+	background-image: linear-gradient(top, rgba(255,255,255,.3), rgba(255,255,255,0));
+}
+
+/* */
+
+.button.green{
+	background-color: #00BE5C;
+	border-color: #00BE5C;
+}
+
+.button.green:hover{
+	background-color: #62c462;
+}
+
+.button.green:active{
+	background: #57a957;
+}
+
+/* For desktop users enable hover effects (return to top functionality) */
+@media only screen and (min-width : 1224px) {
+	#return-to-top:hover i {
+		top: 5px;
+		color: #fff;
+	}
+
+	#return-to-top:hover {
+		background: #00BE5C;
+	}
+}
+
+/* Return to top button css */
+#return-to-top {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	background: rgb(0, 0, 0);
+	background: rgba(0, 0, 0, 0.7);
+	width: 50px;
+	height: 50px;
+	display: block;
+	text-decoration: none;
+	-webkit-border-radius: 35px;
+	-moz-border-radius: 35px;
+	border-radius: 35px;
+	display: none;
+	-webkit-transition: all 0.3s linear;
+	-moz-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+#return-to-top i {
+	color: #fff;
+	margin: 0;
+	position: relative;
+	left: 15px;
+	top: 13px;
+	font-size: 19px;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+/* Return to top icon */
+.icon-chevron-up{
+	content: url(images/up-arrow.png);
+}
+
+
+/* If mobile device max width 480px */
+@media only screen and (max-device-width: 1020px) {
+	.desktop {display: none;}
+}
+}
+
+/* This is for the PRELOADER */
+/* This only works with JavaScript, 
+if it's not present, don't show loader */
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(images/loader.svg) center no-repeat #283338;
+}
+
+
+.dropbtn { 
+	padding: 5px 0;
+	margin: 0px 16px;
+	border: none;
+	cursor: pointer;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 75px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+	border-radius: 25px;
+	left: 8%;
+}
+
+.dropdown-content a {
+	padding: 3px 3px;
+	text-decoration: none;
+	display: block;
+	border-radius: 25px;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+	transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01 s;
+}
+
+/*Cookie info bar mobile display styling*/
+@media (max-width:711px) {
+	.cookieinfo  {
+		display: block !important;
+		font-size: 10px !important;
+	}
+
+	.cookieinfo-close{
+		display: none !important;
+	}
+}
+
+@media (max-width:514px) {
+	.cookieinfo  {
+		display: none !important;
+	}
+}
+
+.cookieinfo-close:hover{
+	background-color: #fce31b !important;
+}
+
+.cookieinfo span a:hover{
+	color: #fce31b !important;
+}
