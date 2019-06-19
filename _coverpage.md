@@ -1,6 +1,6 @@
 ![logo](images/logo_cover.svg)
 
-# API <small>9.76</small>
+# Journal of my journeys
 
 > LYNX API version 9.76 (latest)
 
