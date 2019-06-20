@@ -1,15 +1,15 @@
-![logo](images/logo_cover.svg)
+![logo](images/journal.png)
 
 # Journal of my journeys
 
-> LYNX API version 9.76 (latest)
+> Welcome
 
-- Simple and lightweight
-- Automate your trading
-- Create your own strategies
+- Pictures and trips
+- Where to travel
+- Where to eat
 
 [Download](/API_versions.md)
-[View API Documentation](#lynx-api-documentation)
+[Explore](#my-first-post)
 [Quickstart](https://github.com/lynxbroker/API-examples/tree/master/Java/quickstart)
 
 
