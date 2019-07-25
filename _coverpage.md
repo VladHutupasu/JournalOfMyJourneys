@@ -8,9 +8,9 @@
 - Where to travel
 - Where to eat
 
-[Download](/API_versions.md)
+[Download](/)
 [Explore](#my-first-post)
-[Quickstart](https://github.com/lynxbroker/API-examples/tree/master/Java/quickstart)
+[Quickstart]()
 
 
 
